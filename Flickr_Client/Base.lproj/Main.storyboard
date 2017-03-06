@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kNn-nA-YGJ">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="oA5-01-ZgJ">
+            <objects>
+                <navigationController id="kNn-nA-YGJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iPB-X2-3o3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="12t-TR-36K" kind="relationship" relationship="rootViewController" id="VsW-fl-1q6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JVW-xk-lOJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2562" y="-340"/>
+        </scene>
+        <!--Base Tabbar Controller-->
+        <scene sceneID="fud-QW-HRq">
+            <objects>
+                <tabBarController id="12t-TR-36K" customClass="ACBaseTabbarController" customModule="Flickr_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="dEb-em-ra4"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="VVa-Dc-f44">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="jVh-tb-k4Q"/>
+                        <segue destination="Ukt-gT-3Sw" kind="relationship" relationship="viewControllers" id="WDd-PN-4PS"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fOK-WI-ywQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1671" y="-340"/>
+        </scene>
+        <!--Коллекция-->
+        <scene sceneID="nRp-KU-3ac">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Ukt-gT-3Sw" customClass="ACCollectionViewController" customModule="Flickr_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hEi-7j-E9m"/>
+                        <viewControllerLayoutGuide type="bottom" id="s2X-LU-38a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DXC-BV-1f8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7nG-Nd-NXt">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QZS-ad-aZw">
+                                    <size key="itemSize" width="113" height="229"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="s22-9u-C4C">
+                                        <rect key="frame" x="0.0" y="0.0" width="113" height="229"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="113" height="229"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7nG-Nd-NXt" firstAttribute="top" secondItem="hEi-7j-E9m" secondAttribute="bottom" constant="-62" id="2xt-Lh-wbA"/>
+                            <constraint firstAttribute="trailing" secondItem="7nG-Nd-NXt" secondAttribute="trailing" id="3iw-mp-WJn"/>
+                            <constraint firstItem="s2X-LU-38a" firstAttribute="top" secondItem="7nG-Nd-NXt" secondAttribute="bottom" id="T5N-qE-OmI"/>
+                            <constraint firstItem="7nG-Nd-NXt" firstAttribute="leading" secondItem="DXC-BV-1f8" secondAttribute="leading" id="ftg-57-FXM"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Коллекция" image="collection" id="16f-hy-1WG"/>
+                    <connections>
+                        <outlet property="collectionView" destination="7nG-Nd-NXt" id="VZB-bI-8TE"/>
+                        <segue destination="1dl-VA-0YX" kind="push" identifier="showBrowserFromCView" id="X2v-e3-IEU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kcz-dF-vue" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-772" y="15.742128935532236"/>
+        </scene>
+        <!--Photo Browser View Controller-->
+        <scene sceneID="gAD-7W-xR5">
+            <objects>
+                <viewController id="1dl-VA-0YX" customClass="AVPhotoBrowserViewController" customModule="Flickr_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gMX-ql-PSg"/>
+                        <viewControllerLayoutGuide type="bottom" id="vQr-Il-rwf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z60-ef-6y7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xb0-Ry-RUW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lX7-Ka-bJy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="341.60000000000002" y="-340.47976011994007"/>
+        </scene>
+        <!--Таблица-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Flickr_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jTd-rO-TR5">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="reZ-Oa-KWL">
+                                        <rect key="frame" x="0.0" y="92" width="375" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="reZ-Oa-KWL" id="oog-RX-J8g">
+                                            <frame key="frameInset" width="375" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jTd-rO-TR5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-62" id="13O-7i-2tO"/>
+                            <constraint firstAttribute="trailing" secondItem="jTd-rO-TR5" secondAttribute="trailing" id="7R5-XJ-HJK"/>
+                            <constraint firstItem="jTd-rO-TR5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Mhg-7h-l6y"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jTd-rO-TR5" secondAttribute="bottom" id="fBc-EU-p2g"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Таблица" image="table" id="lON-O9-hU0"/>
+                    <connections>
+                        <outlet property="tableView" destination="jTd-rO-TR5" id="3Es-88-DJf"/>
+                        <segue destination="1dl-VA-0YX" kind="show" identifier="showBrowserFromTable" id="Wtl-Lc-KUv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-772" y="-652"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="collection" width="30" height="30"/>
+        <image name="table" width="29" height="30"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="X2v-e3-IEU"/>
+    </inferredMetricsTieBreakers>
+</document>
